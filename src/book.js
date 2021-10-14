@@ -11,20 +11,25 @@ function buildMainCharacter(name, age, pronouns) {
   return mainCharacter
 };
 
-function saveReview(criticReview) {
-  var reviews = [];
-  reviews.push(criticReview)
-};
+   function saveReview(criticReview, reviews) {
+     if (reviews.includes(criticReview)) {
+       return reviews;
+     } else {
+       reviews.push(criticReview);
+     }
+     return reviews;
+   };
+
 
 function calculatePageCount(title) {
   return title.length * 20
 };
 
-function writeBook(createTitle, buildMainCharacter, calculatePageCount, genre) {
+function writeBook(title, buildMainCharacter, genre) {
   var book = {
-    title: createTitle,
+    title: title,
     mainCharacter: buildMainCharacter,
-    pageCount: calculatePageCount,
+    pageCount: calculatePageCount(title),
     genre: genre,
   }
   return book
