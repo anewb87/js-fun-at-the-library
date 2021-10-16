@@ -25,13 +25,14 @@ function listTitles(shelfArray) {
 }
 
 function searchShelf(shelfArray, title) {
+  var onShelf
   for (var i = 0; i < shelfArray.length; i++ ) {
     if (shelfArray[i].title === title) {
-      return true
+      onShelf = true
     } else {
-      return false
+      onShelf = false
     }
-  }
+  } return onShelf
 }
 
 module.exports = {
